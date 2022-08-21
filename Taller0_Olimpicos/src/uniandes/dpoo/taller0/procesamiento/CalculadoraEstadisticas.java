@@ -376,24 +376,6 @@ public class CalculadoraEstadisticas
 	}
 	
 	/**
-	 * 
-	 * @param nombreAtleta El nombre del atleta a buscar
-	 * @return El país del atleta dado
-	 */
-	public String paisAtleta(String nombreAtleta)
-	{
-		String nombrePais = null;
-		Atleta atleta = buscarAtleta(nombreAtleta);
-		if (atleta != null)
-		{
-			Pais pais = atleta.darPais();
-			nombrePais = pais.darNombre();
-		}
-		
-		return nombrePais;
-	}
-
-	/**
 	 * Calcula qué porcentaje de los atletas ha sido medallista (ha ganado al menos
 	 * una medalla).
 	 * 
@@ -410,6 +392,23 @@ public class CalculadoraEstadisticas
 				cantidadMedallistas++;
 		}
 		return cantidadMedallistas / cantidadAtletas;
+	}
+	
+	/**
+	 * @param nombreAtleta El nombre del atleta a buscar
+	 * @return El país del atleta dado
+	 */
+	public String paisAtleta(String nombreAtleta)
+	{
+		String nombrePais = null;
+		Atleta atleta = buscarAtleta(nombreAtleta);
+		if (atleta != null)
+		{
+			Pais pais = atleta.darPais();
+			nombrePais = pais.darNombre();
+		}
+		
+		return nombrePais;
 	}
 
 	/**
